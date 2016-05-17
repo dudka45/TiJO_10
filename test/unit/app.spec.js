@@ -16,7 +16,7 @@ describe('app', function () {
         });
         it('should assign person below 12 to kids group', function () {
             expect(app.assignToSwimmingCourse('Zack', '10/06/2010')).toEqual({
-                nam: 'Zack', age: 5, course: 'kids'
+                name: 'Zack', age: 5, course: 'kids'
             });
 
             expect(app.assignToSwimmingCourse('Max', '12/07/2008')).toEqual({
@@ -28,7 +28,7 @@ describe('app', function () {
     describe('calculationArea', function(){
         it('should return false if params is incorrect', function(){
             expect(app.calculateArea('-1', 42, 0, 'Success', 'Error')).toEqual(false);
-            expect(app.calculateArea(-1, "-3", 5, 'Success', 'Error')).toEqual(false);
+            expect(app.calculateArea(-1, '-3', 5, 'Success', 'Error')).toEqual(false);
             expect(app.calculateArea(4, 23, '-5', 'Success', 'Error')).toEqual(false);
             expect(app.calculateArea('45', '22', -5, 'Success', 'Error')).toEqual(false);
             expect(app.calculateArea('4', 4, '4', 'Success', 'Error')).toEqual(false);
@@ -50,8 +50,8 @@ describe('app', function () {
         });
 
         it('should return negative number and Error', function(){
-            expect(app.calculateArea(3, 3, 3, 'Success', 'Error')).toEqual({area: -6, message: "Error"});
-            expect(app.calculateArea(4, 4, 4, 'Success', 'Error')).toEqual({area: -12, message: "Error"});
+            expect(app.calculateArea(3, 3, 3, 'Success', 'Error')).toEqual({area: -6, message: 'Error'});
+            expect(app.calculateArea(4, 4, 4, 'Success', 'Error')).toEqual({area: -12, message: 'Error'});
         });
     });
 });
